@@ -1,5 +1,5 @@
-# Axum with Askama template
-Demo axum with askama template
+# Axum with Askama Template Example
+Demo axum with askama template. This repo show how to use askama with axum and some askama template example.
 
 ## Requirement
 - Rust 1.79

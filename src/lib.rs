@@ -1,6 +1,8 @@
+use askama_route::initiate_askama_route;
 use axum::{response::Html, routing::get, Router};
 use tower_http::trace::TraceLayer;
 
+pub mod askama_route;
 pub mod settings;
 
 async fn handler() -> Html<&'static str> {
@@ -9,6 +11,7 @@ async fn handler() -> Html<&'static str> {
 
 pub fn init_router() -> Router {
     Router::new()
+        .nest("/askama", initiate_askama_route())
         .route("/", get(handler))
         .layer(TraceLayer::new_for_http())
 }
